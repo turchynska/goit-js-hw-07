@@ -1,17 +1,17 @@
-const button = document.querySelector(".change-color")
-button.addEventListener("click",() =>{
+
+const button = document.querySelector(".change-color");
+button.addEventListener("click", () => {
   const body = document.body;
   const textColors = document.querySelector('.color');
 
-  const randomHexColors = getRandomHexColor();
+  const randomHexColor = getRandomHexColor();
 
-  body.style.backgroundColor = randomHexColors();
+  body.style.backgroundColor = randomHexColor;
 
-  const colorName = `<span class="color"${randomHexColors}></span>`
+  const colorName = `<span class="color">${randomHexColor}</span>`;
   textColors.innerHTML = '';
   textColors.insertAdjacentHTML('beforeend', colorName);
 });
-
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
